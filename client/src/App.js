@@ -1,15 +1,15 @@
 import React from "react";
+import Header from "./components/Header";
+import Post from "./pages/Post";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default function App() {
   return (
-    <main className="p-2.5 max-w-[500px] mx-auto my-0">
-      <header className="flex justify-between">
-        <a href=""> MyBlog</a>
-        <nav className="space-x-4">
-          <a href="">Login </a>
-          <a href="">Register </a>
-        </nav>
-      </header>
-    </main>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Post />} />
+      </Routes>
+    </Router>
   );
 }

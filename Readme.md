@@ -1,3 +1,4 @@
 # Blog APP using MERN
 
-#Work in Progress
+
+#Work in Progress for frontend

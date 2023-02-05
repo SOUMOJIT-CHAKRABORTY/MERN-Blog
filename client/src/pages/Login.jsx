@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Login() {
   return (
-    <main>
+    <main className="mt-10">
       <h1 className="text-center text-3xl font-bold mb-6">Login</h1>
       <form className="flex flex-col space-y-3 max-w-[600px] mx-auto">
         <input

@@ -14,11 +14,16 @@ export default function Register() {
   }
   async function onSubmitRegistration(e) {
     e.preventDefault();
-    await fetch("http://localhost:4000/register", {
+    const response = await fetch("http://localhost:4000/register", {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
     });
+    if (response.status === 200) {
+      alert("registration successful");
+    } else {
+      alert("registration failed");
+    }
   }
   return (
     <main className="mt-10">
@@ -30,12 +35,14 @@ export default function Register() {
         <input
           type="text"
           placeholder="username / email"
+          value={username}
           onChange={onChangeUsername}
           className="border border-gray-300 rounded h-[30px] items-center px-3"
         />
         <input
-          type="text"
+          type="password"
           placeholder="password"
+          value={password}
           onChange={onChangePassword}
           className="border border-gray-300 rounded h-[30px] px-3"
         />

@@ -6,9 +6,9 @@ const app = express();
 
 app.use(express.json());
 
-// mongoose.connect(
-//   "mongodb+srv://blog:sbDfdGiNqIw8fbE7@cluster0.soavyro.mongodb.net/?retryWrites=true&w=majority"
-// );
+mongoose.connect(
+  "mongodb+srv://blog:sbDfdGiNqIw8fbE7@cluster0.soavyro.mongodb.net/?retryWrites=true&w=majority"
+);
 
 app.use(cors());
 

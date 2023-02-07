@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [redirect, setRedirect] = useState(false);
 
   function onChangeUsername(e) {
     e.preventDefault();
@@ -20,8 +22,17 @@ export default function Login() {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
+      credentials: "include",
     });
-    console.log(response);
+    if (response.ok) {
+      setRedirect(true);
+    } else {
+      alert(" Worng user credentials.");
+    }
+  }
+
+  if (redirect) {
+    return <Navigate to="/" />;
   }
 
   return (

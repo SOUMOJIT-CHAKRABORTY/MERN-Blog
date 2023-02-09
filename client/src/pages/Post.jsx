@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function Post() {
+  useEffect(() => {
+    fetch("http://localhost:4000/post").then((response) => {
+      response.json().then((posts) => {
+        console.log(posts);
+      });
+    });
+  });
+
   return (
     <main className="ml-10 mt-10">
       <div className="flex space-x-4 mb-5">

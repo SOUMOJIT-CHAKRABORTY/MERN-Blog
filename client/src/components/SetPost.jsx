@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function SetPost({
+  _id,
   title,
   summary,
   cover,
@@ -14,7 +15,7 @@ export default function SetPost({
     <>
       <div className="flex space-x-4 mb-5">
         <div className="w-full ml-4">
-          <Link to={"/post/id"}>
+          <Link to={`/post/${_id}`}>
             <img
               className="w-full h-full"
               src={"http://localhost:4000/" + cover}
@@ -23,7 +24,7 @@ export default function SetPost({
           </Link>
         </div>
         <div className="w-full text-left pr-4">
-          <Link to={"/post/id"}>
+          <Link to={`/post/${_id}`}>
             <p className="font-bold text-lg">{title}</p>
           </Link>
           <h2 className="flex mb-2 mt-1 text-xs text-gray-400 font-semibold space-x-2 items-center">

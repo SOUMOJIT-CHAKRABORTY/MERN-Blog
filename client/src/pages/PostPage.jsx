@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 export default function PostPage() {
   const [postInfo, setPostInfo] = useState(null);
@@ -33,6 +34,11 @@ export default function PostPage() {
             dangerouslySetInnerHTML={{ __html: postInfo.content }}
           ></p>
         </div>
+        <Link to={`/edit/${id}`}>
+          <button className="border border-gray-800 p-3 rounded bg-black text-white">
+            Edit post
+          </button>
+        </Link>
       </div>
     </>
   );
